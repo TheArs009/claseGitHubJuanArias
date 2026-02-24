@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from detonv import load_dotenv
 
 app = FastAPI()
 
+load_dotenv()
 
 @app.get("/llm{promt}")
 async def read_root(promt):
@@ -10,7 +12,7 @@ async def read_root(promt):
     from google import genai
 
     # The client gets the API key from the environment variable `GEMINI_API_KEY`.
-    client = genai.Client(api_key= "AIzaSyDGzlRsxv2-r9x1j495VWp5DIVWdkfVwuA") 
+    client = genai.Client
 
     response = client.models.generate_content(
         model="gemini-3-flash-preview", contents=promt
