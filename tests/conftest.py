@@ -32,3 +32,12 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "e2e: end-to-end tests that require a running server"
     )
+
+
+def pytest_collection_modifyitems(config, items):
+    marker_expr = config.getoption("-m", "")
+    if "e2e" not in marker_expr:
+        skip_e2e = pytest.mark.skip(reason="need -m e2e option to run")
+        for item in items:
+            if "e2e" in item.keywords:
+                item.add_marker(skip_e2e)

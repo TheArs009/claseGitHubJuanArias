@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # claseLlm
 
 Repositorio de clases prácticas sobre desarrollo de software con LLMs.
@@ -41,3 +42,7 @@ DATABASE_URL=postgresql://chat_user:secret@localhost:5432/chatdb
 ```
 
 > Si ya corriste el contenedor antes, usá `docker start chat-db` en lugar del comando de arriba.
+=======
+# claseGitHubJuanArias
+cambiopush
+>>>>>>> 8b82b9db359d9156f7aa6998e920e3e3479fc168

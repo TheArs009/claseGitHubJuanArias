@@ -14,6 +14,7 @@ def conversation_id(page: Page) -> int:
     return int(item.get_attribute("data-id"))
 
 
+@pytest.mark.e2e
 def test_crear_conversacion(page: Page):
     page.goto(BASE_URL)
     page.click("#new-conv-btn")
@@ -22,6 +23,7 @@ def test_crear_conversacion(page: Page):
     expect(page.locator("#send")).to_be_enabled()
 
 
+@pytest.mark.e2e
 def test_enviar_y_recibir_mensaje(page: Page, conversation_id: int):
     page.goto(BASE_URL)
     page.click(f'.conv-item[data-id="{conversation_id}"]')
@@ -31,11 +33,13 @@ def test_enviar_y_recibir_mensaje(page: Page, conversation_id: int):
     expect(page.locator(".message.user .bubble")).to_contain_text("Hola")
 
 
+@pytest.mark.e2e
 def test_lista_conversaciones_persisted(page: Page, conversation_id: int):
     page.goto(BASE_URL)
     expect(page.locator(f'.conv-item[data-id="{conversation_id}"]')).to_be_visible()
 
 
+@pytest.mark.e2e
 def test_cambiar_entre_conversaciones(page: Page):
     page.goto(BASE_URL)
     page.click("#new-conv-btn")
