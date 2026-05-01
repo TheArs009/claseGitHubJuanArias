@@ -1,4 +1,4 @@
-# main.py — versión nueva
+# main.py — versión nueva o
 from pydantic import BaseModel
 from fastapi import FastAPI, Depends, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -225,3 +225,4 @@ def chat(conv_id: int, body: ChatRequest, session: SessionDep):
     session.refresh(bot_msg)
 
     return bot_msg
+#hola
