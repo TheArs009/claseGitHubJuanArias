@@ -46,4 +46,5 @@ DATABASE_URL=postgresql://chat_user:secret@localhost:5432/chatdb
 # claseGitHubJuanArias
 cambiopush
 >>>>>>> 8b82b9db359d9156f7aa6998e920e3e3479fc168
-#Hello 
+# Hello hola 
+# holax2
